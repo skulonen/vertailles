@@ -1,0 +1,13 @@
+{
+  "name": "Vertailles",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any"
+    }
+  ],
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "description": "Zip comparison app"
+}
