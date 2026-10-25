@@ -30,7 +30,7 @@ export function App() {
 
   return (
     <>
-      <calcite-shell className="calcite-mode-dark">
+      <calcite-shell>
         <calcite-shell-panel slot="panel-start" resizable>
           <calcite-panel>
             <calcite-block expandable expanded heading="Input files">
