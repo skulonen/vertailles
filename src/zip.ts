@@ -151,12 +151,16 @@ export async function compareZipFiles(
   }
 
   function calculateDirectoryChanges(directory: DirectoryNode): boolean {
-    directory.hasChanges = directory.children.some((child) => {
+    directory.children.forEach((child) => {
       if (child.type === "file") {
-        return child.status !== "unchanged";
+        if (child.status !== "unchanged") {
+          directory.hasChanges = true;
+        }
+      } else {
+        if (calculateDirectoryChanges(child)) {
+          directory.hasChanges = true;
+        }
       }
-
-      return calculateDirectoryChanges(child);
     });
 
     return directory.hasChanges;
