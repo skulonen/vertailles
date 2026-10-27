@@ -37,7 +37,7 @@ export function Viewer({ node, diff }: Props) {
       );
 
     return monacoLanguage?.id ?? "plaintext";
-  }, [node]);
+  }, [node, monaco]);
 
   if (!contents) {
     return <calcite-loader label="" />;
